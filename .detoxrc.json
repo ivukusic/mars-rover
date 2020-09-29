@@ -1,0 +1,12 @@
+{
+  "testRunner": "jest",
+  "runnerConfig": "e2e/config.json",
+  "configurations": {
+    "ios.sim.debug": {
+      "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/marsRover.app",
+      "build": "xcodebuild -workspace ios/marsRover.xcworkspace -configuration Debug -scheme marsRover -sdk iphonesimulator -derivedDataPath ios/build",
+      "type": "ios.simulator",
+      "name": "iPhone 11"
+    }
+  }
+}

@@ -9,15 +9,17 @@ import { global } from '../../style';
 import { IAddRoverProps } from './AddRover.type';
 import styles from './AddRover.style';
 
-const AddRover = ({ isVisible, onConfirm }: IAddRoverProps): JSX.Element => {
-  const [{ x, y, direction, movement, movementError, plateau }, setState] = useState({
-    x: 1,
-    y: 1,
-    direction: 'N',
-    movement: '',
-    movementError: '',
-    plateau: [5, 5],
-  });
+const INITIAL_STATE = {
+  x: 1,
+  y: 1,
+  direction: 'N',
+  movement: '',
+  movementError: '',
+  plateau: [5, 5],
+};
+
+const AddRover = ({ isVisible, onClose, onConfirm }: IAddRoverProps): JSX.Element => {
+  const [{ x, y, direction, movement, movementError, plateau }, setState] = useState(INITIAL_STATE);
 
   const onChangeText = (value: string) => {
     let error = '';
@@ -49,9 +51,15 @@ const AddRover = ({ isVisible, onConfirm }: IAddRoverProps): JSX.Element => {
         movement,
       };
       onConfirm(data);
+      setState(INITIAL_STATE);
     } else {
       setState(prevState => ({ ...prevState, movementError: 'Please add movement' }));
     }
+  };
+
+  const onCancelPress = () => {
+    onClose();
+    setState(INITIAL_STATE);
   };
 
   return (
@@ -98,11 +106,13 @@ const AddRover = ({ isVisible, onConfirm }: IAddRoverProps): JSX.Element => {
               error={movementError}
               onChangeText={onChangeText}
               placeholder="Movement - accepting only LRM characters..."
+              testID="add-rover-movement-input"
               value={movement}
             />
           </View>
-          <View style={[global.container, styles.buttonContainer]}>
-            <Button label="Add rover" onPress={onAddRoverPress} />
+          <View style={[global.container, global.row]}>
+            <Button style={global.container} label="Cancel" onPress={onCancelPress} testID="add-rover-button" />
+            <Button style={global.container} label="Add rover" onPress={onAddRoverPress} testID="add-rover-button" />
           </View>
         </ScrollView>
       </View>

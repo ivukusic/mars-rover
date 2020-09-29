@@ -34,7 +34,11 @@ const Home = (): JSX.Element => {
             <Text style={styles.title}>ROVERS</Text>
             <View style={styles.content}>
               {rovers.map((rover, index) => (
-                <View key={index} style={[styles.rover, index + 1 < rovers.length && styles.roverBorder]}>
+                <View
+                  key={index}
+                  style={[styles.rover, index + 1 < rovers.length && styles.roverBorder]}
+                  testID="home-rover-item"
+                >
                   <Text>Plateau size: {rover[0]}</Text>
                   <Text>Starting position: {rover[1]}</Text>
                   <Text>Movement: {rover[2]}</Text>
@@ -44,9 +48,9 @@ const Home = (): JSX.Element => {
             </View>
           </>
         )}
-        <Button style={styles.button} label="Add rover" onPress={onAddRoverPress} />
+        <Button style={styles.button} label="Add rover" onPress={onAddRoverPress} testID="home-add-rover" />
       </ScrollView>
-      <AddRover isVisible={addRoverVisible} onConfirm={onAddRoverConfirm} />
+      <AddRover isVisible={addRoverVisible} onClose={onAddRoverPress} onConfirm={onAddRoverConfirm} />
     </>
   );
 };

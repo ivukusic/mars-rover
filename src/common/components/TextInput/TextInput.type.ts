@@ -3,6 +3,7 @@ export interface ITextInputProps {
   label?: string;
   onChangeText: (value: string) => void;
   placeholder?: string;
+  testID?: string;
   style?: any;
   value: string;
 }
