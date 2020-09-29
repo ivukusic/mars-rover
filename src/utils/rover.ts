@@ -108,6 +108,12 @@ class MarsRover {
   };
 }
 
+/**
+ * @param {string[]} - parameter for input data
+ * @param {boolean} - parameter to define what should happen on rover getting out of bound
+ * errorOnOut - if true, throws an error
+ * errorOnOut - if false, does not throw an error, leaves rover on same position
+ */
 export const calculateRoversPosition = (input: string[], errorOnOut = false) => {
   try {
     const marsRover = new MarsRover(input, errorOnOut);

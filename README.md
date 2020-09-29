@@ -46,6 +46,12 @@ Running tests
 yarn test:e2e:ios
 ```
 
+## Note about Mars Rover solution
+
+Path to solution file: src/utils/rover.ts
+Path to solution test file: src/utils/rover.test.ts
+Method calculateRoversPosition takes two parameters. Input is self explanatory, and errorOnOut defines what should happen on rover getting out of bound. If errorOnOut=true, throws an error and if errorOnOut=false, does not throw an error, just leaves rover on same position
+
 ## Challenge
 
 The problem below requires some kind of input. You are free to implement any mechanism for feeding input into your solution
