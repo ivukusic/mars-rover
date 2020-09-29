@@ -1,11 +1,15 @@
 class MarsRover {
   errorOnOut: boolean;
-  plateau: any;
-  rovers: any;
+  plateau: number[];
+  rovers: string[][];
 
   constructor(input: string[], errorOnOut: boolean) {
-    const plateau: any = input.shift()?.split(' ');
-    this.plateau = [parseInt(plateau[0], 10), parseInt(plateau[1], 10)];
+    let plateau: string[] = [];
+    const tempPlateau = input.shift();
+    if (tempPlateau) {
+      plateau = tempPlateau.split(' ');
+    }
+    this.plateau = plateau.length ? [parseInt(plateau[0], 10), parseInt(plateau[1], 10)] : [];
     this.rovers = this.getRovers(input);
     this.errorOnOut = errorOnOut;
   }
@@ -99,7 +103,7 @@ class MarsRover {
   };
 
   calculateRoversPosition = () => {
-    const calculated: any = [];
+    const calculated: string[] = [];
     this.rovers.map((rover: string[]) => {
       const position = this.transferRover(rover[0], rover[1]);
       calculated.push(position);

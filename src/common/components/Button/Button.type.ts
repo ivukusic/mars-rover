@@ -1,4 +1,4 @@
-import { GestureResponderEvent } from 'react-native';
+import { GestureResponderEvent, TextStyle, ViewStyle } from 'react-native';
 
 export interface IButtonProps {
   activeOpacity?: number;
@@ -6,7 +6,7 @@ export interface IButtonProps {
   label: string;
   loading?: boolean;
   onPress?: (event: GestureResponderEvent) => void;
-  style?: any;
-  styleText?: any;
+  style?: ViewStyle;
+  styleText?: TextStyle;
   testID?: string;
 }

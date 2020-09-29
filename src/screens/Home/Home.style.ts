@@ -8,10 +8,10 @@ export default StyleSheet.create({
     height: 100,
   },
   container: {
-    flex: 1,
     justifyContent: 'flex-start',
     alignItems: 'center',
     backgroundColor: '#fafafa',
+    paddingBottom: 50,
   },
   title: {
     backgroundColor: ultralightGray,

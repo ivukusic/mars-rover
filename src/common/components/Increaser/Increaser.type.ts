@@ -1,7 +1,9 @@
+import { ViewStyle } from 'react-native';
+
 export interface IIncreaserProps {
   min: number;
   max?: number;
   onPress: (value: number) => void;
-  style?: any;
+  style?: ViewStyle;
   value: number;
 }

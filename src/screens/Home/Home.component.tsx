@@ -3,12 +3,23 @@ import { ScrollView, Text, View } from 'react-native';
 
 import { AddRover, Button, Toolbar } from '../../common/components';
 import { calculateRoversPosition } from '../../utils';
+import { global } from '../../common/style';
 
 import styles from './Home.style';
 
 const Home = (): JSX.Element => {
   const [addRoverVisible, setAddRoverVisible] = useState<boolean>(false);
-  const [rovers, setRovers] = useState<string[][]>([]);
+  const [rovers, setRovers] = useState<string[][]>([
+    ['5 5', '1 4 N', 'MMLL', '1 1E'],
+    ['5 5', '1 4 N', 'MMLL', '1 1E'],
+    ['5 5', '1 4 N', 'MMLL', '1 1E'],
+    ['5 5', '1 4 N', 'MMLL', '1 1E'],
+    ['5 5', '1 4 N', 'MMLL', '1 1E'],
+    ['5 5', '1 4 N', 'MMLL', '1 1E'],
+    ['5 5', '1 4 N', 'MMLL', '1 1E'],
+    ['5 5', '1 4 N', 'MMLL', '1 1E'],
+    ['5 5', '1 4 N', 'MMLL', '1 1E'],
+  ]);
 
   const onAddRoverPress = () => {
     setAddRoverVisible(!addRoverVisible);
@@ -28,7 +39,7 @@ const Home = (): JSX.Element => {
   return (
     <>
       <Toolbar label="Mars Rovers" />
-      <ScrollView contentContainerStyle={[styles.container]}>
+      <ScrollView style={global.container} contentContainerStyle={[styles.container]}>
         {!!rovers.length && (
           <>
             <Text style={styles.title}>ROVERS</Text>
