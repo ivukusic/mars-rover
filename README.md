@@ -4,8 +4,16 @@
 
 Navigate to your project root folder and run the following command:
 
+Install node_modules
+
 ```
 yarn install
+```
+
+Install pods
+
+```
+cd ios && pod install
 ```
 
 ## Run the app

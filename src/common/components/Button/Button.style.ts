@@ -4,6 +4,7 @@ import { themeYellow } from '../../style';
 export const styles = StyleSheet.create({
   button: {
     padding: 12,
+    minHeight: 60,
   },
   spinnerContainer: {
     width: 50,

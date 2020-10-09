@@ -9,19 +9,10 @@ import styles from './Home.style';
 
 const Home = (): JSX.Element => {
   const [addRoverVisible, setAddRoverVisible] = useState<boolean>(false);
-  const [rovers, setRovers] = useState<string[][]>([
-    ['5 5', '1 4 N', 'MMLL', '1 1E'],
-    ['5 5', '1 4 N', 'MMLL', '1 1E'],
-    ['5 5', '1 4 N', 'MMLL', '1 1E'],
-    ['5 5', '1 4 N', 'MMLL', '1 1E'],
-    ['5 5', '1 4 N', 'MMLL', '1 1E'],
-    ['5 5', '1 4 N', 'MMLL', '1 1E'],
-    ['5 5', '1 4 N', 'MMLL', '1 1E'],
-    ['5 5', '1 4 N', 'MMLL', '1 1E'],
-    ['5 5', '1 4 N', 'MMLL', '1 1E'],
-  ]);
+  const [rovers, setRovers] = useState<string[][]>([]);
 
   const onAddRoverPress = () => {
+    console.log('CLICK');
     setAddRoverVisible(!addRoverVisible);
   };
 

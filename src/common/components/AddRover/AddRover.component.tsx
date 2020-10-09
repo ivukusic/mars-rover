@@ -110,8 +110,9 @@ const AddRover = ({ isVisible, onClose, onConfirm }: IAddRoverProps): JSX.Elemen
               value={movement}
             />
           </View>
+
           <View style={[global.container, global.row]}>
-            <Button style={global.container} label="Cancel" onPress={onCancelPress} testID="add-rover-button" />
+            <Button style={global.container} label="Cancel" onPress={onCancelPress} testID="cancel-rover-button" />
             <Button style={global.container} label="Add rover" onPress={onAddRoverPress} testID="add-rover-button" />
           </View>
         </ScrollView>
